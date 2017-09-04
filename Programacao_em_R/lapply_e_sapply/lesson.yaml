@@ -1,46 +1,46 @@
 - Class: meta
-  Course: R Programming
-  Lesson: lapply and sapply
-  Author: Nick Carchedi
+  Course: Programacao em R
+  Lesson: lapply e sapply
+  Author: Nick Carchedi, Clarice Groeneveld (tradução)
   Type: Standard
   Organization: JHU Biostat
   Version: 2.2.11
 
 - Class: text
-  Output: In this lesson, you'll learn how to use lapply() and sapply(), the two most important members of R's *apply family of functions, also known as loop functions.
+  Output: Nessa lição, você irá aprender a user lapply() e sapply(), os dois membros mais importantes da família *apply de funções, também conhecidas como funções de loop.
 
 - Class: text
-  Output: These powerful functions, along with their close relatives (vapply() and tapply(), among others) offer a concise and convenient means of implementing the Split-Apply-Combine strategy for data analysis.
+  Output: Essas funções poderosas, junto com seus parentes próximos (vapply() e tapply(), entre outras) provêm uma maneira concisa e conveniente de implementar a estratégia Dividir-Aplicar-Combinar para análise de dados.
 
 - Class: text
-  Output: Each of the *apply functions will SPLIT up some data into smaller pieces, APPLY a function to each piece, then COMBINE the results. A more detailed discussion of this strategy is found in Hadley Wickham's Journal of Statistical Software paper titled 'The Split-Apply-Combine Strategy for Data Analysis'.
+  Output: Cada uma das funções *apply irá DIVIDIR os dados em pedaços menores, APLICAR uma função a cada pedaço, e então COMBINAR os resultados. Uma discussão mais detalhada desta estratégia pode ser encontrada no artigo de Hadley Wickham no  Journal of Statistical Software entitulado  'The Split-Apply-Combine Strategy for Data Analysis'.
 
 - Class: text
-  Output: "Throughout this lesson, we'll use the Flags dataset from the UCI Machine Learning Repository. This dataset contains details of various nations and their flags. More information may be found here: http://archive.ics.uci.edu/ml/datasets/Flags"
+  Output: Ao longo desta lição, utilizaremos um conjunto de dados chamado Flags (Bandeiras) do repositório UCI Machine Learning. Este conjunto de dados contém detalhes sobre várias nações e suas bandeiras. Mais informação (em inglês) pode ser encontrada neste link:  http://archive.ics.uci.edu/ml/datasets/Flags
 
 - Class: text
-  Output: Let's jump right in so you can get a feel for how these special functions work!
+  Output: Vamos começar logo para que você possa ter uma noção de como essas funções especiais funcionam!
 
 - Class: cmd_question
-  Output: I've stored the dataset in a variable called flags. Type head(flags) to preview the first six lines (i.e. the 'head') of the dataset.
-  CorrectAnswer: head(flags)
-  AnswerTests: omnitest(correctExpr='head(flags)')
-  Hint: Type head(flags) to view the 'head' of the dataset.
+  Output: Colocamos um conjunto de dados em uma variável chamada bandeiras. Digite head(bandeiras) para visualizar as seis primeiras linhas (a 'cabeça') do dataset.
+  CorrectAnswer: head(bandeiras)
+  AnswerTests: omnitest(correctExpr='head(bandeiras)')
+  Hint: Digite head(bandeiras) para ver a 'cabeça' do dataset.
 
 - Class: cmd_question
-  Output: You may need to scroll up to see all of the output. Now, let's check out the dimensions of the dataset using dim(flags).
-  CorrectAnswer: dim(flags)
-  AnswerTests: omnitest(correctExpr='dim(flags)')
-  Hint: Type dim(flags) to view the dimensions of the dataset.
+  Output: Você pode precisar rolar a tela para cima para ver todo o resultado. Agora, vamos checar as dimensões do dataset usando dim(bandeiras).
+  CorrectAnswer: dim(bandeiras)
+  AnswerTests: omnitest(correctExpr='dim(bandeiras)')
+  Hint: Digite dim(bandeiras) para ver as dimensões do dataset.
 
 - Class: text
-  Output: This tells us that there are 194 rows, or observations, and 30 columns, or variables. Each observation is a country and each variable describes some characteristic of that country or its flag. To open a more complete description of the dataset in a separate text file, type viewinfo() when you are back at the prompt (>).
+  Output: Isso nos diz que há 194 linhas, ou observações, e 30 colunas, ou variáveis. Cada observação é um país e cada variável descreve uma característica daquele país e sua bandeira. Se quiser, há uma uma descrição mais completa do dataset que pode ser aberta em um arquivo de texto separado digitando viewinfo() quando estiver de volta ao prompt (>).
 
 - Class: cmd_question
-  Output: As with any dataset, we'd like to know in what format the variables have been stored. In other words, what is the 'class' of each variable? What happens if we do class(flags)? Try it out.
-  CorrectAnswer: class(flags)
-  AnswerTests: omnitest(correctExpr='class(flags)')
-  Hint: Type class(flags) to see what happens.
+  Output: Como com qualquer dataset, gostaríamos de saber em que formato as variáveis estão armazenadas. Em outras palavras, qual é a classe de cada variável? O que acontece se nós digitarmos class(bandeiras)? Teste isso.
+  CorrectAnswer: class(bandeiras)
+  AnswerTests: omnitest(correctExpr='class(bandeiras)')
+  Hint: Digite class(bandeiras) para ver o que acontece.
 
 - Class: text
   Output: That just tells us that the entire dataset is stored as a 'data.frame', which doesn't answer our question. What we really need is to call the class() function on each individual column. While we could do this manually (i.e. one column at a time) it's much faster if we can automate the process. Sounds like a loop!
@@ -49,7 +49,7 @@
   Output: The lapply() function takes a list as input, applies a function to each element of the list, then returns a list of the same length as the original one. Since a data frame is really just a list of vectors (you can see this with as.list(flags)), we can use lapply() to apply the class() function to each column of the flags dataset. Let's see it in action!
 
 - Class: cmd_question
-  Output: Type cls_list <- lapply(flags, class) to apply the class() function to each column of the flags dataset and store the result in a variable called cls_list. Note that you just supply the name of the function you want to apply (i.e. class), without the usual parentheses after it.
+  Output: Type cls_list <- lapply(flags, class) to apply the class() function to each column of the flags dataset and store the result in a variable called cls_list. Not  that you just supply the name of the function you want to apply (i.e. class), without the usual parentheses after it.
   CorrectAnswer: cls_list <- lapply(flags, class)
   AnswerTests: omnitest(correctExpr='cls_list <- lapply(flags, class)')
   Hint: Type cls_list <- lapply(flags, class) to apply the class() function to each column of our dataset and store the result in a variable called cls_list.
