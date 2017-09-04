@@ -163,80 +163,79 @@
   Output: Faça a mesma operação, mas usando sapply() e armazene o resultado em uma variável chamada mat_formas.
   CorrectAnswer: mat_formas <- sapply(formas_bandeiras, range)
   AnswerTests: omnitest(correctExpr='mat_formas <- sapply(formas_bandeiras, range)')
-  Hint: mat_formas <- sapply(formas_bandeiras, range) will apply the range() function to each column of formas_bandeiras and store the result in mat_formas.
+  Hint: mat_formas <- sapply(formas_bandeiras, range) vai aplicar a função range() a cada coluna de formas_bandeiras e armazenar o resultado em mat_formas. 
 
 - Class: cmd_question
-  Output: View the contents of mat_formas.
+  Output: Veja o conteúdo de mat_formas.
   CorrectAnswer: mat_formas
   AnswerTests: any_of_exprs('mat_formas', 'print(mat_formas)')
-  Hint: Type mat_formas to view its contents.
+  Hint: Digite mat_formas para ver seus conteúdos.
 
 - Class: text
-  Output: Each column of mat_formas gives the minimum (row 1) and maximum (row 2) number of times its respective shape appears in different bandeiras.
-
+  Output: Cada coluna de mat_formas tem o mínimo (linha 1) e o máximo (linha 2) do número de vezes que cada respectiva forma aparece em diferentes bandeiras.
 - Class: cmd_question
-  Output: Use the class() function to confirm that mat_formas is a matrix.
+  Output: Use a função class() para confirmar que mat_formas é uma matriz.
   CorrectAnswer: class(mat_formas)
   AnswerTests: omnitest(correctExpr='class(mat_formas)')
-  Hint: class(mat_formas) returns the class of mat_formas.
+  Hint: class(mat_formas) retorna a classe de mat_formas.
 
 - Class: text
-  Output: As we've seen, sapply() always attempts to simplify the result given by lapply(). It has been successful in doing so for each of the examples we've looked at so far. Let's look at an example where sapply() can't figure out how to simplify the result and thus returns a list, no different from lapply().
+  Output: Como vimos, sapply() sempre tenta simplificar o resultado dado por lapply(). Ele foi bem sucedido em fazer isso em todos os exemplos que avaliamos até agora. Vamos ver um exemplo em que sapply() não é capaz de entender como simplificar o resultado e então retorna uma lista, nada diferente de lapply().
 
 - Class: cmd_question
-  Output: When given a vector, the unique() function returns a vector with all duplicate elements removed. In other words, unique() returns a vector of only the 'unique' elements. To see how it works, try unique(c(3, 4, 5, 5, 5, 6, 6)).
+  Output: Quando dado um vetor, a função unique() retorna um vetor com todos os elementos duplicados removidos. Em outras palavras, unique() retorna um vetor com só os elementos 'únicos'. Para ver como funciona, teste unique(c(3, 4, 5, 5, 5, 6, 6)).
   CorrectAnswer: unique(c(3, 4, 5, 5, 5, 6, 6))
   AnswerTests: omnitest(correctExpr='unique(c(3, 4, 5, 5, 5, 6, 6))')
-  Hint: Do unique(c(3, 4, 5, 5, 5, 6, 6)) to see how the unique() function works.
+  Hint: Escreva unique(c(3, 4, 5, 5, 5, 6, 6)) para ver como a função unique() funciona.
 
 - Class: cmd_question
-  Output: We want to know the unique values for each variable in the bandeiras dataset. To accomplish this, use lapply() to apply the unique() function to each column in the bandeiras dataset, storing the result in a variable called unique_vals.
-  CorrectAnswer: unique_vals <- lapply(bandeiras, unique)
-  AnswerTests: omnitest(correctExpr='unique_vals <- lapply(bandeiras, unique)')
-  Hint: Try unique_vals <- lapply(bandeiras, unique).
+  Output: Queremos saber os valores únicos para cada variável no dataset bandeiras. Para fazer isso, usamos a função lapply() para aplicar a função unique() em cada coluna do dataset bandeiras, armazenando o resultado em uma variável chamada vals_unicos.
+  CorrectAnswer: vals_unicos <- lapply(bandeiras, unique)
+  AnswerTests: omnitest(correctExpr='vals_unicos <- lapply(bandeiras, unique)')
+  Hint: Teste vals_unicos <- lapply(bandeiras, unique).
 
 - Class: cmd_question
-  Output: Print the value of unique_vals to the console.
-  CorrectAnswer: unique_vals
-  AnswerTests: any_of_exprs('unique_vals', 'print(unique_vals)')
-  Hint: Type unique_vals to view its contents.
+  Output: Imprima o valor de vals_unicos no console.
+  CorrectAnswer: vals_unicos
+  AnswerTests: any_of_exprs('vals_unicos', 'print(vals_unicos)')
+  Hint: Digite vals_unicos para ver seu conteúdo.
 
 - Class: cmd_question
-  Output: "Since unique_vals is a list, you can use what you've learned to determine the length of each element of unique_vals (i.e. the number of unique values for each variable). Simplify the result, if possible. Hint: Apply the length() function to each element of unique_vals."
-  CorrectAnswer: sapply(unique_vals, length)
-  AnswerTests: omnitest(correctExpr='sapply(unique_vals, length)')
-  Hint: Apply the length() function to each element of the unique_vals list using sapply(). Remember, no parentheses after the name of the function you are applying (i.e. length).
+  Output: Já que vals_unicos é uma lista, você pode usar o que aprendeu para determinar o tamanho de cada elemento de vals_unicos (o número de valores únicos para cada variável). Simplifique o resultado, se possível. Dica: Use a função length() em cada elemento de vals_unicos.
+  CorrectAnswer: sapply(vals_unicos, length)
+  AnswerTests: omnitest(correctExpr='sapply(vals_unicos, length)')
+  Hint: Use a função length() em cada elemento da lista vals_unicos usando sapply(). Lembre-se, sem parênteses depois do nome da função que você está aplicando.
 
 - Class: text
-  Output: The fact that the elements of the unique_vals list are all vectors of *different* length poses a problem for sapply(), since there's no obvious way of simplifying the result.
+  Output: O fato de que elementos da lista vals_unicos são todos vetores de tamanho *diferente* é um problema para sapply(), já que não há uma maneira óbvia de simplificar o resultado.
 
 - Class: cmd_question
-  Output: Use sapply() to apply the unique() function to each column of the bandeiras dataset to see that you get the same unsimplified list that you got from lapply().
+  Output: Use sapply() para aplicar a função unique() a cada coluna do dataset bandeiras e ver que a mesma lista não-simplificada é retornada.
   CorrectAnswer: sapply(bandeiras, unique)
   AnswerTests: omnitest(correctExpr='sapply(bandeiras, unique)')
-  Hint: Use sapply(bandeiras, unique) to apply the unique function to each column of bandeiras, failing to simplify the result.
+  Hint: Use sapply(bandeiras, unique) para aplicar a função unique a cada coluna de bandeiras, não conseguindo simplificar o resultado.
 
 - Class: text
-  Output: Occasionally, you may need to apply a function that is not yet defined, thus requiring you to write your own. Writing functions in R is beyond the scope of this lesson, but let's look at a quick example of how you might do so in the context of loop functions.
+  Output: Ocasionalmente, você pode precisar aplicar uma função que ainda não foi definida, então requerindo que você escreva sua própria. Escrever funções em R não está no escopo desta lição, mas vamos ver um rápido exemplo de como você pode fazer isso no contexto de funções de loop.
 
 - Class: text
-  Output: Pretend you are interested in only the second item from each element of the unique_vals list that you just created. Since each element of the unique_vals list is a vector and we're not aware of any built-in function in R that returns the second element of a vector, we will construct our own function.
+  Output: Finja que você está interessado somente no segundo item de cada elemento da lista vals_unicos que você criou. Já que cada elemento de vals_unicos é um vetor, e não sabemos de nenhuma função básica do R que retorne o segundo elemento de um vetor, vamos contruir nossa própria.
 
 - Class: cmd_question
-  Output: lapply(unique_vals, function(elem) elem[2]) will return a list containing the second item from each element of the unique_vals list. Note that our function takes one argument, elem, which is just a 'dummy variable' that takes on the value of each element of unique_vals, in turn.
-  CorrectAnswer: lapply(unique_vals, function(elem) elem[2])
-  AnswerTests: calculates_same_value('lapply(unique_vals, function(elem) elem[2])')
-  Hint: Use lapply(unique_vals, function(elem) elem[2]) to return a list containing the second item from each element of the unique_vals list.
+  Output: lapply(vals_unicos, function(elem) elem[2]) vai retornar uma lista contendo o segundo item de cada elemento de vals_unicos. Note que nossa função tem um argumento, elem, que é só uma 'variável dummy' que recebe o valor de cada elemento de vals_unicos, um de cada vez.
+  CorrectAnswer: lapply(vals_unicos, function(elem) elem[2])
+  AnswerTests: calculates_same_value('lapply(vals_unicos, function(elem) elem[2])')
+  Hint: Use lapply(vals_unicos, function(elem) elem[2]) para retornar uma lista contendo o segundo item de cada elemento da lista vals_unicos.
 
 - Class: text
-  Output: The only difference between previous examples and this one is that we are defining and using our own function right in the call to lapply(). Our function has no name and disappears as soon as lapply() is done using it. So-called 'anonymous functions' can be very useful when one of R's built-in functions isn't an option.
+  Output: A única diferença entre os exemplos anteriores e este é que estamos definindo e usando nossa própria função na chamada do lapply(). Nossa função não tem nome e desaparece assim que lapply() terminar de usá-la. 'Funções anônimas' como essa podem ser bastante úteis quando não há uma função do R que se encaixe.
 
 - Class: text
-  Output: In this lesson, you learned how to use the powerful lapply() and sapply() functions to apply an operation over the elements of a list. In the next lesson, we'll take a look at some close relatives of lapply() and sapply().
+  Output: Nessa lição, você aprendeu a usar as poderosas funções lapply() e sapply() para aplicar uma operação sobre os elementos de uma lista. Na próxima lição, iremos dar uma olhada nos parentes próximos de lapply() e sapply().
 
 - Class: mult_question
-  Output: Would you like to inform someone about your successful completion of this lesson?
+  Output: Você gostaria de informar alguém sobre seu sucesso em completar essa lição?
   CorrectAnswer: NULL
-  AnswerChoices: Yes; No
+  AnswerChoices: Sim; Não
   AnswerTests: notify()
   Hint: NULL
