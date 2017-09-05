@@ -16,7 +16,7 @@
   Output: Cada uma das funções *apply irá DIVIDIR os dados em pedaços menores, APLICAR uma função a cada pedaço, e então COMBINAR os resultados. Uma discussão mais detalhada desta estratégia pode ser encontrada no artigo de Hadley Wickham no  Journal of Statistical Software entitulado  'The Split-Apply-Combine Strategy for Data Analysis'.
 
 - Class: text
-  Output: Ao longo desta lição, utilizaremos um conjunto de dados chamado bandeiras (Bandeiras) do repositório UCI Machine Learning. Este conjunto de dados contém detalhes sobre várias nações e suas bandeiras. Mais informação (em inglês) pode ser encontrada neste link:  http://archive.ics.uci.edu/ml/datasets/bandeiras
+  Output: Ao longo desta lição, utilizaremos um conjunto de dados chamado bandeiras (Bandeiras) do repositório UCI Machine Learning. Este conjunto de dados contém detalhes sobre várias nações e suas bandeiras. Mais informação (em inglês) pode ser encontrada neste link -  http://archive.ics.uci.edu/ml/datasets/bandeiras
 
 - Class: text
   Output: Vamos começar logo para que você possa ter uma noção de como essas funções especiais funcionam!
