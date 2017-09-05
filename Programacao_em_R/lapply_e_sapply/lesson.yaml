@@ -201,7 +201,7 @@
   Hint: Digite vals_unicos para ver seu conteúdo.
 
 - Class: cmd_question
-  Output: Já que vals_unicos é uma lista, você pode usar o que aprendeu para determinar o tamanho de cada elemento de vals_unicos (o número de valores únicos para cada variável). Simplifique o resultado, se possível. Dica: Use a função length() em cada elemento de vals_unicos.
+  Output: Já que vals_unicos é uma lista, você pode usar o que aprendeu para determinar o tamanho de cada elemento de vals_unicos (o número de valores únicos para cada variável). Simplifique o resultado, se possível. Dica - Use a função length() em cada elemento de vals_unicos.
   CorrectAnswer: sapply(vals_unicos, length)
   AnswerTests: omnitest(correctExpr='sapply(vals_unicos, length)')
   Hint: Use a função length() em cada elemento da lista vals_unicos usando sapply(). Lembre-se, sem parênteses depois do nome da função que você está aplicando.
