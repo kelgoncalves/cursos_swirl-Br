@@ -1,12 +1,12 @@
 # Path to installed lesson
 .lessonpath <- file.path(path.package("swirl"), "Courses", 
-                         "R_Programming_Alt", "lapply_and_sapply")
+                         "Programacao_em_R", "lapply_and_sapply")
 # Path to dataset
 .datapath <- file.path(.lessonpath, "flag.data.txt")
 # Load dataset
-flags <- read.csv(.datapath, header=FALSE)
+bandeiras <- read.csv(.datapath, header=FALSE)
 # Set column names
-colnames(flags) <- c("name", "landmass", "zone", "area", "population",
+colnames(bandeiras) <- c("name", "landmass", "zone", "area", "population",
                      "language", "religion", "bars", "stripes", "colours",
                      "red", "green", "blue", "gold", "white", "black",
                      "orange", "mainhue", "circles", "crosses", "saltires",
