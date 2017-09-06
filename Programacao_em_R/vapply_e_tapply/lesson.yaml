@@ -7,7 +7,7 @@
   Version: 2.2.11
 
 - Class: text
-  Output: Na última lição, você aprendeu sobre os dois membros fundamentais da família *apply de funções do R: lapply() e sapply(). Ambas recebem listas como entrada, aplicam uma função a cada elemento da lista, então combinam e retornam o resultado. lapply() sempre retorna uma lista, enquanto sapply() tenta simplificar o resultado.
+  Output: "Na última lição, você aprendeu sobre os dois membros fundamentais da família *apply de funções do R: lapply() e sapply(). Ambas recebem listas como entrada, aplicam uma função a cada elemento da lista, então combinam e retornam o resultado. lapply() sempre retorna uma lista, enquanto sapply() tenta simplificar o resultado."
 
 - Class: text
   Output: Nessa lição, você aprenderá a usar vapply() e tapply(), cada servindo um propósito bem específico dentro da metodologia Dividr-Aplicar-Combinar. Para manter a consistência, vamos usar o mesmo dataset que usamos nas lição 'lapply e sapply'.
