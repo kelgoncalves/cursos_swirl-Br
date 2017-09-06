@@ -108,7 +108,7 @@
   Output: Finalmente, use a mesma lógica para olhar o sumário de valores de população para cada um dos seis continentes.
   CorrectAnswer: tapply(bandeiras$population, bandeiras$landmass, summary)
   AnswerTests: omnitest(correctExpr="tapply(bandeiras$population, bandeiras$landmass, summary)")
-  Hint: "Você pode ver um sumário das populações para cada um dos seis continentes chamando tapply() com três argumentos: bandeiras$population, bandeiras$landmass e summary.”
+  Hint: Você pode ver um sumário das populações para cada um dos seis continentes chamando tapply() com três argumentos - bandeiras$population, bandeiras$landmass e summary.
 
 - Class: mult_question  
   Output: Qual é a população máxima (em milhões) para o quarto continente (África)?
