@@ -29,7 +29,7 @@
   Output: E se você tivesse esquecido como unique() funciona e tivesse pensando que ele retorna o *número* de valores únicos contidos no objeto passado a ele? Então você teria esperado incorretamente que sapply() bandeiras retornasse um vetor numérico, já que cada elemento da lista retornado conteria um único número e sapply() então poderia simplificar o resultado em um vetor.
 
 - Class: text
-  Output: Quando trabalhamos interativamente (no promp), isso não é um problema tão grave, já que vemos o resultado imediatamente e rapidamente reconhecemos nossos erros. Porém, quando trabalhamos não-interativamente (ex.: escrevendo nossas próprias funções), um mal entendido pode passar despercebido e causar resultados incorretos mais tarde. Portanto, você pode querer ser mais cuidadoso e é aí que vapply() é útil.
+  Output: "Quando trabalhamos interativamente (no promp), isso não é um problema tão grave, já que vemos o resultado imediatamente e rapidamente reconhecemos nossos erros. Porém, quando trabalhamos não-interativamente (ex.: escrevendo nossas próprias funções), um mal entendido pode passar despercebido e causar resultados incorretos mais tarde. Portanto, você pode querer ser mais cuidadoso e nesses casos vapply() é útil."
 
 - Class: text
   Output: Enquanto sapply() tenta ‘adivinhar’ o formato correto do resultado, vapply() permite que você especifique ele explicitamente. Se o resultado não corresponder ao formato que você especificou, vapply() vai retornar um erro, fazendo com que a operação pare. Isso pode previnir problemas significativos no seu código que podem ser causados por resultados inesperados retornados por sapply().
