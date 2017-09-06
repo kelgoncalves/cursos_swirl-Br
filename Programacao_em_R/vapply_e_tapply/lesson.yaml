@@ -1,16 +1,16 @@
 - Class: meta
-  Course: R Programming
-  Lesson: vapply and tapply
-  Author: Nick Carchedi
+  Course: Programacao em R
+  Lesson: vapply e tapply
+  Author: Nick Carchedi, Clarice Groeneveld (tradução)
   Type: Standard
   Organization: JHU Biostat
   Version: 2.2.11
 
 - Class: text
-  Output: "In the last lesson, you learned about the two most fundamental members of R's *apply family of functions: lapply() and sapply(). Both take a list as input, apply a function to each element of the list, then combine and return the result. lapply() always returns a list, whereas sapply() attempts to simplify the result."
+  Output: Na última lição, você aprendeu sobre os dois membros fundamentais da família *apply de funções do R: lapply() e sapply(). Ambas recebem listas como entrada, aplicam uma função a cada elemento da lista, então combinam e retornam o resultado. lapply() sempre retorna uma lista, enquanto sapply() tenta simplificar o resultado.
 
 - Class: text
-  Output: In this lesson, you'll learn how to use vapply() and tapply(), each of which serves a very specific purpose within the Split-Apply-Combine methodology. For consistency, we'll use the same dataset we used in the 'lapply and sapply' lesson.
+  Output: Nessa lição, você aprenderá a usar vapply() e tapply(), cada servindo um propósito bem específico dentro da metodologia Dividr-Aplicar-Combinar. Para manter a consistência, vamos usar o mesmo dataset que usamos nas lição 'lapply e sapply'.
 
 - Class: text
   Output: "The Flags dataset from the UCI Machine Learning Repository contains details of various nations and their flags. More information may be found here: http://archive.ics.uci.edu/ml/datasets/Flags"
