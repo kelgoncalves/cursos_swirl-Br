@@ -74,7 +74,7 @@
   Hint: Use table(bandeiras$landmass) para ver quantos países estão em cada grupo.
 
 - Class: cmd_question
-  Output: A variável ‘animate’ (animado) no nosso dataset tem o valor 1 se a bandeira do país contém uma imagem animada (ex.: águia, árvore, mão humana) e 0 se não contiver. Use table(bandeiras$animate) para ver quantas bandeiras contém imagens animadas.
+  Output: "A variável ‘animate’ (animado) no nosso dataset tem o valor 1 se a bandeira do país contém uma imagem animada (ex.: águia, árvore, mão humana) e 0 se não contiver. Use table(bandeiras$animate) para ver quantas bandeiras contém imagens animadas."
   CorrectAnswer: table(bandeiras$animate)
   AnswerTests: omnitest(correctExpr="table(bandeiras$animate)")
   Hint: Use table(bandeiras$animate) para ver quantas bandeiras contém imagens animadas.
