@@ -123,6 +123,6 @@
 - Class: mult_question
   Output: Você gostaria de informar alguém sobre seu sucesso em completar essa lição?
   CorrectAnswer: NULL
-  AnswerChoices: Yes; No
+  AnswerChoices: Sim; Não
   AnswerTests: notify()
   Hint: NULL
