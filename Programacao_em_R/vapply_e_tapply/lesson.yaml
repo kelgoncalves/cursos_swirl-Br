@@ -98,7 +98,7 @@
   Hint:  Você pode ver um sumário da população para países com e sem a cor vermelho em sua bandeira com tapply(bandeiras$population, bandeiras$red, summary).
 
 - Class: mult_question  
-  Output: Qual é a população média (em milhões) para países sem a cor vermelha na sua bandeira?
+  Output: Qual é a população mediana (em milhões) para países sem a cor vermelha na sua bandeira?
   AnswerChoices: 9.0; 4.0; 27.6; 3.0; 22.1; 0.0
   CorrectAnswer: 3.0
   AnswerTests: omnitest(correctVal= '3.0')
