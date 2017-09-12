@@ -181,10 +181,3 @@
   CorrectAnswer: minha_div
   AnswerTests: omnitest(correctExpr='minha_div')
   Hint: Se o teu ambiente não te permite auto-completar, digite minha_div e aperte Enter para prosseguir.
-
-- Class: mult_question
-  Output: Você gostaria de informar alguém sobre o teu sucesso em completar esta lição?
-  CorrectAnswer: NULL
-  AnswerChoices: Sim; Não
-  AnswerTests: notify()
-  Hint: NULL
