@@ -181,3 +181,9 @@
   CorrectAnswer: minha_div
   AnswerTests: omnitest(correctExpr='minha_div')
   Hint: Se o teu ambiente não te permite auto-completar, digite minha_div e aperte Enter para prosseguir.
+  
+- Class: cmd_question
+  Output: Parabéns por completar a lição. Antes de terminar, copie e cole o comando options(warn=0) para retornar algumas configurações que foram automaticamente desativadas para esta lição.
+  CorrectAnswer: options(warn=0)
+  AnswerTests: omnitest(correctExpr='options(warn=0)')
+  Hint: Copie e cole options(warn=0) para terminar a lição
