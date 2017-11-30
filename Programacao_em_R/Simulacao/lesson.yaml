@@ -125,8 +125,7 @@
   Hint: Use rnorm(10) para gerar 10 númeroa aleatórios de uma distribuição normal.
 
 - Class: cmd_question
-  Output: Agora faça o mesmo, exceto com a média de 100 e o desvio padrão de 25
-Now do the same, except with a mean of 100 and a standard deviation of 25.
+  Output: Agora faça o mesmo, exceto com a média de 100 e o desvio padrão de 25.
   CorrectAnswer: rnorm(10, 100, 25)
   AnswerTests: match_call('rnorm(10, 100, 25)')
   Hint: Use rnorm(10, mean = 100, sd = 25) para gerar 10 números aleatórios de uma distribuição normal com média 100 e desvio padrão de 25.
@@ -146,7 +145,7 @@ Now do the same, except with a mean of 100 and a standard deviation of 25.
   Hint: minha_distribuiçao <- replicate(100, rpois(5, 10)) vai repetir a operação 100 vezes e armazenar o resultado.
 
 - Class: cmd_question
-  Output: Consulte o conteúdo de minha_distribuiçao.
+  Output: Consulte o conteúdo de minha_distribuição.
   CorrectAnswer: minha_distribuiçao
   AnswerTests: omnitest('minha_distribuiçao')
   Hint: Imprima o conteúdo de minha_distribuiçao no console.
