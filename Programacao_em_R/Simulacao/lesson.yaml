@@ -1,179 +1,173 @@
 - Class: meta
-  Course: R Programming
+  Course: Programação em R
   Lesson: Simulation
-  Author: Nick Carchedi
+  Author: Nick Carchedi, Sheyla Trefflich (tradução)
   Type: Standard
   Organization: JHU Biostat
   Version: 2.2.11
 
 - Class: text
-  Output: One of the great advantages of using a statistical programming language like R is its vast collection of tools for simulating random numbers.
+  Output: Um das grandes vantagens de utilizar uma linguagem de programação estatística como R é o fato dela ter uma vasta quantidade de ferramentas de simulação de números aleatórios.
 
 - Class: text
-  Output: This lesson assumes familiarity with a few common probability distributions, but these topics will only be discussed with respect to random number generation. Even if you have no prior experience with these concepts, you should be able to complete the lesson and understand the main ideas.
+  Output: Nessa lição assumimos familiaridade com algumas poucas distribuições de probabilidade, mas esses tópicos apenas serão discutidos com respeito a geração de números aleatórios. Mesmo que você não tenha experiência prévia com esses conceitos, você deverá ser capaz de completar essa lição e entender as idéias principais. 
 
 - Class: cmd_question
-  Output: The first function we'll use to generate random numbers is sample(). Use ?sample to pull up the documentation.
+  Output: A primeira função que nós usaremos para gerar números aleatórios é sample(). Use ?sample para conhecer a documentação.
   CorrectAnswer: ?sample
   AnswerTests: omnitest(correctExpr='?sample')
-  Hint: Use '?sample' to pull up the documentation for the sample() function.
+  Hint: Use '?sample' para conhecer a documentação da função sample().
 
 - Class: cmd_question
-  Output: "Let's simulate rolling four six-sided dice: sample(1:6, 4, replace = TRUE)."
+  Output: "Vamos simular o rolamento de quatro dados de seis lados: sample(1:6, 4, replace = TRUE)."
   CorrectAnswer: sample(1:6, 4, replace = TRUE)
   AnswerTests: match_call('sample(1:6, 4, replace = TRUE)')
-  Hint: Type sample(1:6, 4, replace = TRUE) to simulate rolling four six-sided dice.
+  Hint: Digite sample(1:6, 4, replace = TRUE) para simular o rolamento de quatro dados de seis lados.
 
 - Class: cmd_question
-  Output: Now repeat the command to see how your result differs. (The probability of rolling the exact same result is (1/6)^4 = 0.00077, which is pretty small!)
+  Output: Agora repita o comando para ver o quanto seus resultados diferem.(A probabilidade de de rolar os dados e obster exatamente o mesmo resultado é (1/6)^4 = 0.00077, que é uma probabilidade muito baixa!)
   CorrectAnswer: sample(1:6, 4, replace = TRUE)
   AnswerTests: match_call('sample(1:6, 4, replace = TRUE)')
-  Hint: Type sample(1:6, 4, replace = TRUE) to simulate rolling four six-sided dice again.
+  Hint: Digite sample(1:6, 4, replace = TRUE) para simular a rolagem de quatro dados com seis lados novamente.
 
 - Class: text
-  Output: sample(1:6, 4, replace = TRUE) instructs R to randomly select four numbers between 1 and 6, WITH replacement. Sampling with replacement simply means that each number is "replaced" after it is selected, so that the same number can show up more than once. This is what we want here, since what you roll on one die shouldn't affect what you roll on any of the others.
+  Output: sample(1:6, 4, replace = TRUE) orienta o R para selecionar aleatoriamente quatro números entre 1 e 6, com reposição. Amostragem com reposição simplesmente significa que cada número é "devolvido" depois de ser selecionado, então cada número pode aparecer mais de uma vez. É isso que nós queremos aqui, desde que você role um dado de maneira que não devendo afetar a rolagem de nenhum outro dado.
 
 - Class: cmd_question
-  Output: Now sample 10 numbers between 1 and 20, WITHOUT replacement. To sample without replacement, simply leave off the 'replace' argument.
+  Output: Agora amostre 10 números entre 1 e 20, SEM reposição. Para amostrar sem reposição, simplesmente deixe desativado o argumento 'replace'.
   CorrectAnswer: sample(1:20, 10)
   AnswerTests: match_call('sample(1:20, 10)')
-  Hint: Type sample(1:20, 10) to sample 10 numbers between 1 and 20, without replacement.
+  Hint: Digite sample(1:20, 10) para amostrar 10 números entre 1 e 20, sem reposição.
 
 - Class: text
-  Output: Since the last command sampled without replacement, no number appears more than once in the output.
+  Output: Desde que o último comando tenha sido amostrado sem reposição, nenhum número aparecerá mais do que uma vez no resultado. 
 
 - Class: cmd_question
-  Output: LETTERS is a predefined variable in R containing a vector of all 26 letters of the English alphabet. Take a look at it now.
+  Output: LETTERS é uma variável predefinidade em R que contem um vetor com todas as 26 do alfabeto inglês. Confira agora.
   CorrectAnswer: LETTERS
   AnswerTests: omnitest(correctExpr='LETTERS')
-  Hint: Type LETTERS to print its contents to the console.
+  Hint: Digite LETTERS para mostrar o seu conteúdo no console.
 
 - Class: cmd_question
-  Output: The sample() function can also be used to permute, or rearrange, the elements of a vector. For example, try sample(LETTERS) to permute all 26 letters of the English alphabet.
+  Output: A função sample() também pode ser utilizada para permutar, ou rearranjar os elementos do vetor. Por exemplo, tente sample(LETTERS) para permutar todas as 26 letras do alfabeto em inglês.
   CorrectAnswer: sample(LETTERS)
   AnswerTests: omnitest(correctExpr='sample(LETTERS)')
-  Hint: Use sample(LETTERS) to permute all 26 letters of the English alphabet.
+  Hint: Digite sample(LETTERS) para permutar todas as 26 letters do alfabeto inglês.
 
 - Class: text
-  Output: This is identical to taking a sample of size 26 from LETTERS, without replacement. When the 'size' argument to sample() is not specified, R takes a sample equal in size to the vector from which you are sampling.
+  Output: Isso é identico a chamar uma amostragem com 26 LETTERS, sem reposição.  Quando o argumento 'size' para sample () não é especificado, o R leva uma amostra de tamanho igual ao vetor a partir do qual você está amostrando.
+
 
 - Class: text
-  Output: Now, suppose we want to simulate 100 flips of an unfair two-sided coin. This particular coin has a 0.3 probability of landing 'tails' and a 0.7 probability of landing 'heads'.
+  Output: Agora, suponhamos que queremos simular 100 voltas de uma moeda não honesta. Essa moeda particular tem 0.3 de probabilidade de cair em 'cara' e 0.7 de probabilidade de cair em 'coroa'. 
 
 - Class: cmd_question
-  Output: Let the value 0 represent tails and the value 1 represent heads. Use sample() to draw a sample of size 100 from the vector c(0,1), with replacement. Since the coin is unfair, we must attach specific probabilities to the values 0 (tails) and 1 (heads) with a fourth argument, prob = c(0.3, 0.7). Assign the result to a new variable called flips.
-  CorrectAnswer: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))
-  AnswerTests: match_call('flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))')
-  Hint: 'The following command will produce 100 flips of an unfair coin and assign the result: flips <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))'
+  Output: Vamos representar os valores de cara por 0 e os valores de coroa por 1. Use sample() para uma amostragem de tamanho 100 a partir do vetor c(0,1), com reposição. Desde que a moeda seja 'não honesta', nós deveremos atribuir probabilidades específicas para os valores 0 (cara) e 1 (coroa) com um quarto argumento, prob = c(0.3, 0.7). Atribua o resultado a uma nova variáevel chamada voltas.
+  CorrectAnswer: voltas <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))
+  AnswerTests: match_call('voltas <- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))')
+  Hint: 'O sehuinte comando irá produzir 100 voltas de uma moeda 'não honesta' e atribuir o resultado dessa maneira: voltas<- sample(c(0,1), 100, replace = TRUE, prob = c(0.3, 0.7))
 
 - Class: cmd_question
-  Output: View the contents of the flips variable.
-  CorrectAnswer: flips
-  AnswerTests: omnitest(correctExpr='flips')
-  Hint: Just type flips to view its contents.
+  Output: Veja o conteúdo da variável voltas.
+  CorrectAnswer: voltas
+  AnswerTests: omnitest(correctExpr='voltas')
+  Hint: É só digitar voltas para visulaizar o conteúdo.
 
 - Class: cmd_question
-  Output: Since we set the probability of landing heads on any given flip to be 0.7, we'd expect approximately 70 of our coin flips to have the value 1. Count the actual number of 1s contained in flips using the sum() function.
-  CorrectAnswer: sum(flips)
-  AnswerTests: omnitest(correctExpr='sum(flips)')
-  Hint: sum(flips) will add up all the 1s and 0s, giving you the total number of 1s in flips.
+  Output: Desde que nós determinamos a probabilidade de 0.7 de sair cara, nós esperamos que aproximadamente 70 giros da nossa moeda tenha valor 1. Conte o número atual de 1s contidos em voltas usando a função sum().
+  CorrectAnswer: sum(voltas)
+  AnswerTests: omnitest(correctExpr='sum(voltas)')
+  Hint: sum(voltas) irá retornar a soma de quantos 0s e 1s, dando o número total de 1s em voltas.
 
 - Class: cmd_question
-  Output: A coin flip is a binary outcome (0 or 1) and we are performing 100 independent trials (coin flips), so we can use rbinom() to simulate a binomial random variable. Pull up the documentation for rbinom() using ?rbinom.
+  Output: Um volta de uma moeda é um resultado binário (0 ou 1) e estamos realizando 100 testes independentes (voltas de moeda), então podemos usar o rbinom() para simular uma variável aleatória. Leia a documentação para rbinorm() usando ?rbinom.
   CorrectAnswer: ?rbinom
   AnswerTests: omnitest(correctExpr='?rbinom')
-  Hint: Type ?rbinom to pull up the help file for rbinom().
+  Hint: Digite ?rbinom para ver o arquivo de help de rbinom().
 
 - Class: text
-  Output: Each probability distribution in R has an r*** function (for "random"), a d*** function (for "density"), a p*** (for "probability"), and q*** (for "quantile"). We are most interested in the r*** functions in this lesson, but I encourage you to explore the others on your own.
+  Output: Cada probabilidade de distribuição em R tem uma função r*** (para "random"), a função d*** (para "densidade"), a função p*** (para "probabilidade"), e q*** (para "quantil"). Nós estamos muito interessados em funções r*** nessa lição, mas eu encorajo você a também explorar os demais quando puder.
 
 - Class: cmd_question
-  Output: A binomial random variable represents the number of 'successes' (heads) in a given number of independent 'trials' (coin flips). Therefore, we can generate a single random variable that represents the number of heads in 100 flips of our unfair coin using rbinom(1, size = 100, prob = 0.7). Note that you only specify the probability of 'success' (heads) and NOT the probability of 'failure' (tails). Try it now.
+  Output: Uma variável aleatória binomial representa um número de 'sucessos' (coroas) em um dado número de 'tentativas' (voltas da moeda). Senda assim, nós podemos gerar uma única variável aleatória que representa o número de 'sucessos' (coroas) em 100 voltas da nossa moeda 'não-honesta' usando rbinorm(1, size = 100, prob = 0.7). Note que a sua probabilidade só é específica aos 'sucessos' em coroas e NÃO à probabilidade de 'falha' em caras. Tente isso agora.
   CorrectAnswer: rbinom(1, size = 100, prob = 0.7)
   AnswerTests: match_call('rbinom(1, size = 100, prob = 0.7)')
-  Hint: Call rbinom() with n = 1, size = 100, and prob = 0.7.
+  Hint: Chame rbinom() com n = 1, size = 100, e prob = 0.7.
 
 - Class: cmd_question
-  Output: Equivalently, if we want to see all of the 0s and 1s, we can request 100 observations, each of size 1, with success probability of 0.7. Give it a try, assigning the result to a new variable called flips2.
-  CorrectAnswer: flips2 <- rbinom(100, size = 1, prob = 0.7)
-  AnswerTests: match_call('flips2 <- rbinom(100, size = 1, prob = 0.7)')
-  Hint: Call rbinom() with n = 100, size = 1, and prob = 0.7 and assign the result to flips2.
+  Output: De maneira equivalente, se nós queremos ver todos os 0s e 1s, nós podemos requisitar 100 observações, cada uma com tamanho 1, com probabilidade de sucesso de 0.7. Tente isso, atribuindo o resultados a uma nova variável chamada voltas2
+  CorrectAnswer: voltas2 <- rbinom(100, size = 1, prob = 0.7)
+  AnswerTests: match_call('voltas2 <- rbinom(100, size = 1, prob = 0.7)')
+  Hint: Chame rbinom() com n = 100, size = 1, e prob = 0.7 e atribua o resultado a voltas2.
 
 - Class: cmd_question
-  Output: View the contents of flips2.
-  CorrectAnswer: flips2
-  AnswerTests: omnitest('flips2')
-  Hint: Type flips2 to view its contents.
+  Output: Veja o conteúdo de voltas2.
+  CorrectAnswer: voltas2
+  AnswerTests: omnitest('voltas2')
+  Hint: Digite voltas2 para ver seu conteúdo.
 
 - Class: cmd_question
-  Output: Now use sum() to count the number of 1s (heads) in flips2. It should be close to 70!
-  CorrectAnswer: sum(flips2)
-  AnswerTests: omnitest('sum(flips2)')
-  Hint: Use sum(flips2) to count the number of 1s.
+  Output: Agora utilize sum() para contar o número de 1s (coroas) em voltas2. o valor deve estar próximo a 70!
+  CorrectAnswer: sum(voltas2)
+  AnswerTests: omnitest('sum(voltas2)')
+  Hint: Use sum(voltas2) para contar o número de 1s.
 
 - Class: cmd_question
-  Output: Similar to rbinom(), we can use R to simulate random numbers from many other probability distributions. Pull up the documentation for rnorm() now.
+  Output: Similar a rbinom(), nós podemos usar no R uma simulação de números aleatórios com muitas outras distribuições de probabilidade. Veja a documentação de rnorm() agora.
   CorrectAnswer: ?rnorm
   AnswerTests: omnitest('?rnorm')
-  Hint: Type ?rnorm to view its help file.
+  Hint: Digite ?rnorm para ver o arquivo de ajuda.
 
 - Class: cmd_question
-  Output: The standard normal distribution has mean 0 and standard deviation 1. As you can see under the 'Usage' section in the documentation, the default values for the 'mean' and 'sd' arguments to rnorm() are 0 and 1, respectively. Thus, rnorm(10) will generate 10 random numbers from a standard normal distribution. Give it a try.
+  Output: O padrão normal de distribuição tem média 0 e desvio padrão 1. Como você pode ver abaixo na seção de documentão, os valores padrão para os argumentos 'média' e 'sd' (desvio padrão)  de rnorm() são 0 e 1, respectivamente. Portanto, rnorm(10) vai gerar 10 números aleatórios para uma distribuição normal padrão. Tente isso!
   CorrectAnswer: rnorm(10)
   AnswerTests: omnitest('rnorm(10)')
-  Hint: Use rnorm(10) to generate 10 random numbers from a standard normal distribution.
+  Hint: Use rnorm(10) para gerar 10 númeroa aleatórios de uma distribuição normal.
 
 - Class: cmd_question
-  Output: Now do the same, except with a mean of 100 and a standard deviation of 25.
+  Output: Agora faça o mesmo, exceto com a média de 100 e o desvio padrão de 25
+Now do the same, except with a mean of 100 and a standard deviation of 25.
   CorrectAnswer: rnorm(10, 100, 25)
   AnswerTests: match_call('rnorm(10, 100, 25)')
-  Hint: Use rnorm(10, mean = 100, sd = 25) to generate 10 random numbers from a normal distribution with mean 100 and standard deviation 25.
-
+  Hint: Use rnorm(10, mean = 100, sd = 25) para gerar 10 números aleatórios de uma distribuição normal com média 100 e desvio padrão de 25.
 - Class: text
-  Output: Finally, what if we want to simulate 100 *groups* of random numbers, each containing 5 values generated from a Poisson distribution with mean 10? Let's start with one group of 5 numbers, then I'll show you how to repeat the operation 100 times in a convenient and compact way.
+  Output: Finalmente, se quisermos simular 100  * grupos * de números aleatórios, cada um contendo 5 valores gerados a partir de uma distribuição de Poisson com média de 10? Vamos começar com um grupo de 5 números, então vou mostrar-lhe como repetir a operação 100 vezes de forma conveniente e compacta.
 
 - Class: cmd_question
-  Output: Generate 5 random values from a Poisson distribution with mean 10. Check out the documentation for rpois() if you need help.
+  Output: Crie 5 valores aleatórios a partir de uma distribuição de Poisson com média 10. Cheque a documentação utilizando rpois() se precisar de ajuda.
   CorrectAnswer: rpois(5, 10)
   AnswerTests: match_call('rpois(5, 10)')
-  Hint: Use rpois(5, 10) to generate 5 random numbers from a Poisson distribution with mean 10.
+  Hint: Use rpois(5, 10) para gerar 5 números aleatórios a partir de uma distribuição de Poisson com média 10.
 
 - Class: cmd_question
-  Output: Now use replicate(100, rpois(5, 10)) to perform this operation 100 times. Store the result in a new variable called my_pois.
-  CorrectAnswer: my_pois <- replicate(100, rpois(5, 10))
-  AnswerTests: match_call('my_pois <- replicate(100, rpois(5, 10))')
-  Hint: my_pois <- replicate(100, rpois(5, 10)) will repeat the operation 100 times and store the result.
+  Output: Agora utilize replicate(100, rpois(5, 10)) para fazer essa operação 100 vezes. Armazene o resultado em uma nova variável chamada minha_distribuiçao.
+  CorrectAnswer: minha_distribuiçao <- replicate(100, rpois(5, 10))
+  AnswerTests: match_call('minha_distribuiçao <- replicate(100, rpois(5, 10))')
+  Hint: minha_distribuiçao <- replicate(100, rpois(5, 10)) vai repetir a operação 100 vezes e armazenar o resultado.
 
 - Class: cmd_question
-  Output: Take a look at the contents of my_pois.
-  CorrectAnswer: my_pois
-  AnswerTests: omnitest('my_pois')
-  Hint: Print the contents of my_pois to the console.
+  Output: Consulte o conteúdo de minha_distribuiçao.
+  CorrectAnswer: minha_distribuiçao
+  AnswerTests: omnitest('minha_distribuiçao')
+  Hint: Imprima o conteúdo de minha_distribuiçao no console.
 
 - Class: cmd_question
-  Output: replicate() created a matrix, each column of which contains 5 random numbers generated from a Poisson distribution with mean 10. Now we can find the mean of each column in my_pois using the colMeans() function. Store the result in a variable called cm.
-  CorrectAnswer: cm <- colMeans(my_pois)
-  AnswerTests: omnitest('cm <- colMeans(my_pois)')
-  Hint: Use cm <- colMeans(my_pois) to create a vector of column means, storing the result in cm.
+  Output: replicate() cria uma matrix, cada coluna contendo 5 números aleatórios gerados a partir de uma distribuição de Poisson com média de 10. Agora nós podemos encontrar a média de cada coluna em minha_distribuiçao utilizando a função colMeans(). Armazene os resultados na variável chamada cm.
+  CorrectAnswer: cm <- colMeans(minha_distribuiçao)
+  AnswerTests: omnitest('cm <- colMeans(minha_distribuiçao)')
+  Hint: Use cm <- colMeans(minha_distribuiçao) para criar um vetor de colunas médias, armazenando o resultado em cm.
 
 - Class: cmd_question
-  Output: And let's take a look at the distribution of our column means by plotting a histogram with hist(cm).
+  Output: E vamos dar uma observada na distribuição das nossas colunas médias plotando um histograma com hist(cm).
   CorrectAnswer: hist(cm)
   AnswerTests: omnitest('hist(cm)')
-  Hint: hist(cm) will give you a histogram of column means.
+  Hint: hist(cm) vai retornar um histograma de colunas médias.
 
 - Class: text
-  Output: Looks like our column means are almost normally distributed, right? That's the Central Limit Theorem at work, but that's a lesson for another day!
+  Output: Parece que as nossas colunas médias são quase normalmente distribuidas, certo? Esse é o Teorema do Limite Central no trabalho, mas essa é uma lição para outro dia!
 
 - Class: text
-  Output: All of the standard probability distributions are built into R, including exponential (rexp()), chi-squared (rchisq()), gamma (rgamma()), .... Well, you see the pattern.
+  Output: Todas as probabilidades de distribuição padrão são construidas no R, incluindo exponencial (rexp()), qui-quadrado (rchisq()), gamma (rgamma()), ... Bem, você verá o padrão.
 
 - Class: text
-  Output: Simulation is practically a field of its own and we've only skimmed the surface of what's possible. I encourage you to explore these and other functions further on your own.
-
-- Class: mult_question
-  Output: Would you like to inform someone about your successful completion of this lesson?
-  CorrectAnswer: NULL
-  AnswerChoices: Yes; No
-  AnswerTests: notify()
-  Hint: NULL
+  Output: Simulação é praticamente um campo a parte e estamos vendo apenas uma pequena parte. Sinta-se encorajado a explorar essas e outras funções no futuro por si próprio.
